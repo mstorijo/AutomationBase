@@ -2,14 +2,14 @@ package com.test;
 
 import com.test.helpers.PageHelper;
 import com.test.pages.MainPage;
-import org.apache.commons.exec.ExecuteException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-public class OpenMainPageTest {
+public class LoginTest {
+
     WebDriver driver;
     private MainPage mainPage;
     private PageHelper pageHelper;
@@ -21,14 +21,16 @@ public class OpenMainPageTest {
     }
 
     @Test
-    public void openMainPageTest() throws Exception{
-       mainPage = pageHelper.goToMainPage();
-        Assert.assertTrue("URL didn't match", driver.getCurrentUrl().contains("google"));
+    public void loginTest() throws Exception {
+        mainPage = pageHelper.goToMainPage();
+        mainPage.login();
+        Assert.assertTrue("The current URL is not keep.google.com", driver.getCurrentUrl().startsWith("http://keep.google.com"));
     }
 
     @After
-public void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         pageHelper.endTest();
     }
+
 
 }

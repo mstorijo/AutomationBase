@@ -16,7 +16,7 @@ public class WaitHelper {
             }
         };
 
-        Wait<WebDriver> wait = new WebDriverWait(driver, 40);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 180);
         try {
             wait.until(expectation);
         } catch (Throwable error) {
