@@ -1,17 +1,17 @@
 Coding test submitted as requested via Max Latimer at OHO Group.
+-----------------------------------------------------------------
 
 Exercise:
 
 1. Come up with as many test scenarios as you can (up to 20) for your chosen web application
-
 2. Automate 3-5 of the test scenarios
 
 The username and password was created specifically for this test:
 toriTSBtester@gmail.com
 abc123Tori
 
-
 Scenarios
+---------
 
 
 
@@ -32,6 +32,6 @@ As a user, I want to create a note with four list items
 As a User, I want to check off an item on a list
 As a user, I want to add a label to a note
 As a user, I want to make a copy of a note
-As a user, I want to move a note to a different position
+As a user, I want to move a note to a different position  
 
 
