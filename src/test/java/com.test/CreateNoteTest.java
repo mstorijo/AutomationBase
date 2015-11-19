@@ -37,7 +37,7 @@ public class CreateNoteTest {
         String myDateString = fdf.format(myDate);
         String noteText = "Here is some random text for you! And a datestamp: " + myDateString;
         notePage.createNote(noteText);
-        Assert.assertTrue("The note text was not found on the page.", driver.findElement(By.tagName("body")).getText().contains("noteText"));
+        Assert.assertTrue("The note text was not found on the page.", driver.findElement(By.tagName("body")).getText().contains(noteText));
     }
 
     @After

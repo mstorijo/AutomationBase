@@ -30,4 +30,8 @@ public class MainPage {
         passwordField.submit();
     }
 
+    public void search(String searchTerm){
+        WebElement searchField = driver.findElement(By.id("gbqfq"));
+        searchField.sendKeys(searchTerm);
+     }
 }
