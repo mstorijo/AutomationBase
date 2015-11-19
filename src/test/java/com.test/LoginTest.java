@@ -2,6 +2,7 @@ package com.test;
 
 import com.test.helpers.PageHelper;
 import com.test.pages.MainPage;
+import com.test.pages.NotePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -24,7 +25,8 @@ public class LoginTest {
     public void loginTest() throws Exception {
         mainPage = pageHelper.goToMainPage();
         mainPage.login();
-        Assert.assertTrue("The current URL is not keep.google.com", driver.getCurrentUrl().startsWith("http://keep.google.com"));
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue("The current URL is not keep.google.com, it is " + currentUrl, currentUrl.startsWith("https://keep.google.com"));
     }
 
     @After

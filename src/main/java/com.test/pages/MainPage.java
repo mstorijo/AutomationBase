@@ -3,6 +3,9 @@ package com.test.pages;
 import com.test.helpers.WaitHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
 
@@ -17,29 +20,14 @@ public class MainPage {
         this.password = "abc123Tori";
     }
 
-    public void login() {
-        enterUsername();
-        clickNext();
-        enterPassword();
-        clickSignIn();
+    public void login() throws InterruptedException {
+        WebElement usernameField = driver.findElement(By.id("Email"));
+        usernameField.sendKeys(username);
+        usernameField.submit();
+        new WebDriverWait(driver, 3).until(ExpectedConditions.visibilityOfElementLocated(By.id("Passwd")));
+        WebElement passwordField = driver.findElement(By.id("Passwd"));
+        passwordField.sendKeys(password);
+        passwordField.submit();
     }
 
-    public void enterUsername() {
-        driver.findElement(By.id("Email")).sendKeys(username);
-    }
-
-    public void enterPassword() {
-        driver.findElement(By.id("Passwd")).sendKeys(password);
-    }
-
-
-    public void clickNext() {
-        driver.findElement(By.id("next")).click();
-        WaitHelper.waitForPageLoad(driver);
-    }
-
-    public void clickSignIn() {
-        driver.findElement(By.id("signIn")).click();
-        WaitHelper.waitForPageLoad(driver);
-    }
 }

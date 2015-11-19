@@ -21,13 +21,13 @@ public class OpenMainPageTest {
     }
 
     @Test
-    public void openMainPageTest() throws Exception{
-       mainPage = pageHelper.goToMainPage();
+    public void openMainPageTest() throws Exception {
+        mainPage = pageHelper.goToMainPage();
         Assert.assertTrue("URL didn't match", driver.getCurrentUrl().contains("google"));
     }
 
     @After
-public void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         pageHelper.endTest();
     }
 

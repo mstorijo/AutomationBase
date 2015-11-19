@@ -1,4 +1,5 @@
 package com.test.helpers;
+
 import com.test.pages.MainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ public class PageHelper {
         this.driver = driver;
     }
 
-    public MainPage goToMainPage(){
+    public MainPage goToMainPage() {
         driver.get(BASE_URL);
         WaitHelper.waitForPageLoad(driver);
         return new MainPage(driver);
